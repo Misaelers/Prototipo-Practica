@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import TodoEdit from './TodoEdit';
+
+function TodoItem({ todo, onDelete, onEdit }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedText, setEditedText] = useState(todo);
  
-function TodoItem({ todo, onDelete }) {
+  const handleEdit = (newText) => {
+    onEdit(newText);
+    setIsEditing(false);
+  };
   return (
-    <li>
-      {todo}
-      <button onClick={onDelete}>Eliminar</button>
-    </li>
+<li>
+      {isEditing ? (
+<TodoEdit todo={editedText} onSave={handleEdit} />
+      ) : (
+<>
+          {todo}
+<button onClick={() => setIsEditing(true)}>Editar</button>
+<button onClick={onDelete}>Eliminar</button></>
+      )}
+</li>
   );
 }
  

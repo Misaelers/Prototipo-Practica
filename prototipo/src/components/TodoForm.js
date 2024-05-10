@@ -19,6 +19,7 @@ const [text, setText] = useState(() => {
     onAdd(text);
     setText('');
   };
+  
  
   return (
     <form onSubmit={handleSubmit}>
