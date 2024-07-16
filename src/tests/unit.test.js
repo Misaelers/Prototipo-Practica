@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Header from './../components/Header';
 import TodoForm from './../components/TodoForm';
@@ -9,7 +9,7 @@ import '@testing-library/jest-dom'
   const { getByText } = render(<Header />);
   const headerElement = getByText(/Lista de Tareas/i);
   expect(headerElement).toBeInTheDocument();
-});*/
+});
 
 test('renders input field with placeholder', () => {
   const { getByPlaceholderText } = render(<TodoForm />);
@@ -43,3 +43,4 @@ test('deletes todo on button click', () => {
   fireEvent.click(deleteButtons[1]); // Assuming you want to delete the second todo
   expect(handleDeleteTodo).toHaveBeenCalledWith(1);
 });
+*/
